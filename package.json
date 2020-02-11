@@ -1,0 +1,20 @@
+{
+  "name": "quick-journey",
+  "description": "TypeScript Fullstack Application which provides interface to looking for quicker route between many POIs",
+  "author": {
+    "name": "Paweł Galias",
+    "email": "pawel@galias.me",
+    "url": "https://github.com/pgalias"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgalias/quick-journey"
+  },
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
