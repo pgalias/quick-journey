@@ -3,9 +3,10 @@ FROM node:12.15.0-alpine
 RUN mkdir /app
 WORKDIR /app
 
-RUN npm install -g @nestjs/cli
+RUN apk add --update --no-cache bash
+RUN npm install -g @nestjs/cli @nestjs/schematics
 
 COPY package*.json ./
 RUN npm install
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start:dev" ]

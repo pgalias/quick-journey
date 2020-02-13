@@ -13,7 +13,15 @@
   "license": "UNLICENSED",
   "version": "0.1.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "docker-compose up -d",
+    "build": "docker-compose build",
+    "open:api": "docker-compose exec -u $(id -u):$(id -g) api bash",
+    "open:web": "docker-compose exec -u $(id -u):$(id -g) web bash",
+    "open:shared": "docker-compose run -u $(id -u):$(id -g) shared bash",
+    "show:api": "docker-compose run -u $(id -u):$(id -g) api",
+    "show:web": "docker-compose run -u $(id -u):$(id -g) web"
+  },
   "devDependencies": {
     "lerna": "^3.20.2"
   }
