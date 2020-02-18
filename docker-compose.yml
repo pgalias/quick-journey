@@ -5,13 +5,14 @@ services:
     build: ./packages/api
     container_name: api
     volumes:
-      - ./packages/api:/app
+      - .:/var/app
+      - ./empty:/var/app/packages/web
     ports:
       - '4000:4000'
     links:
       - cache
     depends_on:
-      - cache
+      - shared
     environment:
       - VIRTUAL_HOST=api.quick.journey
 
@@ -25,9 +26,12 @@ services:
     build: ./packages/web
     container_name: web
     volumes:
-      - ./packages/web:/app
+      - .:/var/app
+      - ./empty:/var/app/packages/api
     ports:
       - '3000:3000'
+    depends_on:
+      - shared
     environment:
       - VIRTUAL_HOST=quick.journey
 
@@ -35,7 +39,7 @@ services:
     build: ./
     container_name: shared
     volumes:
-      - ./:/var/www
+      - .:/var/app
     ports:
       - '8888:8888'
 

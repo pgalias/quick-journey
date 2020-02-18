@@ -1,11 +1,8 @@
 FROM node:12.15.0-alpine
 
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir /var/app
+WORKDIR /var/app/packages/web
 
 RUN apk add --update --no-cache bash
-
-COPY package*.json ./
-RUN npm install
 
 CMD [ "npm", "start" ]
