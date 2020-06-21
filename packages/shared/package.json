@@ -1,7 +1,7 @@
 {
-  "name": "shared",
+  "name": "@quick-journey/shared",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "jest": "^25.1.0",
